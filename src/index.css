@@ -1,23 +1,25 @@
 :root {
-  /* New Palette */
-  --color-verde: #2D5A27;
-  /* Verde Bugambilia */
-  --color-rosa: #E4007C;
-  /* Rosa Mexicano */
-  --color-dorado: #D4AF37;
-  /* Dorado Solar */
-  --color-blanco: #F8F9FA;
-  /* Blanco Nube */
+  /* New Elegant Palette (Nomada) */
+  --color-verde: #1a1a1a;
+  /* Replaced Green with Rich Black */
+  --color-rosa: #c5a059;
+  /* Replaced Pink with Gold Accent */
+  --color-dorado: #c5a059;
+  /* Standardized Gold */
+  --color-blanco: #ffffff;
+  /* Pure White */
 
   /* Semantic Mappings */
   --color-primary: var(--color-rosa);
   --color-secondary: var(--color-dorado);
-  --color-bg-body: var(--color-blanco);
+  --color-bg-body: #fafafa;
+  /* Very light gray for body to reduce eye strain vs pure white */
   --color-text-main: var(--color-verde);
-  --color-text-body: #333333;
-  /* Readable dark grey for body copy */
-  --color-header-bg: var(--color-verde);
-  --color-footer-bg: var(--color-verde);
+  --color-text-body: #444444;
+  /* Softened dark gray */
+  --color-header-bg: #111111;
+  /* Darker black for header */
+  --color-footer-bg: #111111;
 
   --font-serif: "Playfair Display", "Georgia", serif;
   --font-sans: "Montserrat", "Helvetica Neue", sans-serif;
@@ -271,7 +273,7 @@ ul {
   left: 0;
   width: 100%;
   /* Gradient from Green brand color to transparent */
-  background: linear-gradient(to top, rgba(45, 90, 39, 0.95), transparent);
+  background: linear-gradient(to top, rgba(26, 26, 26, 0.95), transparent);
   padding: 80px 40px;
   color: var(--color-blanco);
 }
@@ -617,7 +619,7 @@ ul {
 }
 
 .pro-tip {
-  background-color: rgba(29, 60, 31, 0.05);
+  background-color: rgba(26, 26, 26, 0.05);
   /* Light Green Tint */
   border-left: 4px solid var(--color-verde);
   padding: 20px;
@@ -677,8 +679,8 @@ ul {
   width: 100%;
   height: 100%;
   background: linear-gradient(to bottom,
-      rgba(45, 90, 39, 0.6),
-      rgba(45, 90, 39, 0.8));
+      rgba(26, 26, 26, 0.6),
+      rgba(26, 26, 26, 0.8));
 }
 
 .gastronomy-hero-content {

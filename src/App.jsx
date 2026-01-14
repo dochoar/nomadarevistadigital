@@ -11,6 +11,7 @@ import ArticlePage from './components/ArticlePage';
 import CategoryPage from './components/CategoryPage';
 import GastronomyPage from './components/GastronomyPage';
 import RestaurantPage from './components/RestaurantPage';
+import AdBanner from './components/AdBanner';
 
 import { articles } from './data/articles';
 
@@ -37,6 +38,7 @@ function App() {
           <Route path="/restaurant/:id" element={<RestaurantPage />} />
           <Route path="/category/:categoryName" element={<CategoryPage />} />
         </Routes>
+        <AdBanner />
         <Footer />
       </div>
     </Router>

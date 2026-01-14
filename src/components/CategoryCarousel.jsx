@@ -1,23 +1,7 @@
 import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { restaurants } from '../data/restaurants';
-
-const categories = [
-    { name: "Bodas y turismo de romance", imageId: 28 }, // Hacienda de Cortes
-    { name: "Turismo de salud y bienestar", imageId: 30 }, // Buena Vibra
-    { name: "Tesoros", imageId: 15 }, // Mil Amores
-    { name: "Turismo idiomático", imageId: 9 }, // Paraiso Cafe
-    { name: "Experiencias turísticas", imageId: 1 }, // Casa Grande
-    { name: "Turismo LGBTTTIQ+", imageId: 16 }, // Frida y Diego
-    { name: "Turismo gastronómico", imageId: 4 }, // Emilia
-    { name: "Vive Museos", imageId: 22 }, // Nana Mixtli (Cultural)
-    { name: "Turismo de reuniones y eventos", imageId: 27 }, // Sumiya
-    { name: "Recreación acuática y parques", imageId: 14 }, // Bungy
-    { name: "Turismo deportivo", imageId: 14 }, // Bungy
-    { name: "Turismo cultural", imageId: 11 }, // Casa Tikal
-    { name: "Agroturismo y naturaleza", imageId: 24 }, // Amomoxtli
-    { name: "Destinos", imageId: 25 }, // Las Mananitas
-];
+import { categories } from '../data/categories';
 
 const CategoryCarousel = () => {
     const scrollRef = useRef(null);
@@ -25,7 +9,7 @@ const CategoryCarousel = () => {
     const scroll = (direction) => {
         const { current } = scrollRef;
         if (current) {
-            const scrollAmount = 300; // Adjust scroll amount
+            const scrollAmount = 300;
             current.scrollBy({
                 left: direction === 'left' ? -scrollAmount : scrollAmount,
                 behavior: 'smooth'
@@ -56,10 +40,10 @@ const CategoryCarousel = () => {
                     </button>
 
                     <div className="carousel-track" ref={scrollRef}>
-                        {categories.map((cat, index) => (
+                        {categories.map((cat) => (
                             <Link
-                                to={cat.name === "Turismo gastronómico" ? "/gastronomy" : `/category/${cat.name}`}
-                                key={index}
+                                to={cat.path}
+                                key={cat.id} // Stable key
                                 className="carousel-card"
                             >
                                 <div className="carousel-card-image-wrapper">
@@ -67,6 +51,7 @@ const CategoryCarousel = () => {
                                         src={getCategoryImage(cat.imageId)}
                                         alt={cat.name}
                                         className="carousel-card-image"
+                                        loading="lazy" // Performance best practice
                                     />
                                 </div>
                                 <div className="carousel-card-overlay">

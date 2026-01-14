@@ -2,24 +2,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import NewsletterModal from './NewsletterModal';
-import logoImg from '../assets/logo-morelos-color.png';
-
-const categories = [
-    "Turismo gastronómico",
-    "Vive Museos",
-    "Turismo de reuniones y eventos",
-    "Bodas y turismo de romance",
-    "Turismo de salud y bienestar",
-    "Recreación acuática y parques",
-    "Turismo deportivo",
-    "Turismo cultural",
-    "Turismo idiomático",
-    "Turismo LGBTTTIQ+",
-    "Agroturismo y naturaleza",
-    "Destinos",
-    "Tesoros",
-    "Experiencias turísticas"
-];
+import logoImg from '../assets/nomada-logo.png';
+import { categories } from '../data/categories';
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -35,8 +19,14 @@ const Header = () => {
                         className="menu-container"
                         onMouseEnter={() => setIsMenuOpen(true)}
                         onMouseLeave={() => setIsMenuOpen(false)}
+                        onFocus={() => setIsMenuOpen(true)} // Accessibility: support keyboard focus
+                        onBlur={() => setIsMenuOpen(false)}
                     >
-                        <button className="menu-toggle" aria-label="Menú">
+                        <button
+                            className="menu-toggle"
+                            aria-label="Menú principal"
+                            aria-expanded={isMenuOpen}
+                        >
                             <span className="hamburger-line"></span>
                             <span className="hamburger-line"></span>
                             <span className="hamburger-line"></span>
@@ -47,13 +37,13 @@ const Header = () => {
                             <div className="mega-menu-content">
                                 <span className="mega-menu-title">Descubre Morelos</span>
                                 <ul className="mega-menu-list">
-                                    {categories.map((cat, index) => (
-                                        <li key={index}>
+                                    {categories.map((cat) => (
+                                        <li key={cat.id}>
                                             <Link
-                                                to={cat === "Turismo gastronómico" ? "/gastronomy" : `/category/${cat}`}
+                                                to={cat.path}
                                                 className="mega-menu-link"
                                             >
-                                                {cat}
+                                                {cat.name}
                                             </Link>
                                         </li>
                                     ))}
@@ -62,14 +52,12 @@ const Header = () => {
                         </div>
                     </div>
 
-
-
                     <Link to="/" className="logo">
-                        <img src={logoImg} alt="Visita Morelos" className="header-logo-img" />
+                        <img src={logoImg} alt="Nomada" className="header-logo-img" />
                     </Link>
                 </div>
 
-                <nav className="desktop-nav">
+                <nav className="desktop-nav" aria-label="Navegación principal">
                     <ul className="nav-links">
                         <li><Link to="/category/Qué Hacer">Qué Hacer</Link></li>
                         <li><Link to="/category/Qué Comer">Qué Comer</Link></li>
@@ -79,8 +67,13 @@ const Header = () => {
 
                 <div className="nav-actions">
                     <div className="search-box">
-                        <input type="text" placeholder="Buscar..." className="search-input" />
-                        <span className="search-icon">🔍</span>
+                        <input
+                            type="text"
+                            placeholder="Buscar..."
+                            className="search-input"
+                            aria-label="Buscar en el sitio"
+                        />
+                        <span className="search-icon" aria-hidden="true">🔍</span>
                     </div>
                     <button
                         className="btn-subscribe"
