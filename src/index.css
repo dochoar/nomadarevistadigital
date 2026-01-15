@@ -315,13 +315,11 @@ ul {
   }
 
   .hero-title {
-    font-size: 1.6rem;
-    /* Smaller title for mobile to fit screen */
-    line-height: 1.2;
-    max-width: 100%;
+    font-size: clamp(1.5rem, 8vw, 2.2rem);
+    /* Fluid size: scales with screen width */
+    line-height: 1.1;
+    width: 100%;
     word-wrap: break-word;
-    overflow-wrap: break-word;
-    hyphens: auto;
   }
 
   .hero-rubric {
@@ -330,7 +328,7 @@ ul {
   }
 
   .hero-overlay {
-    padding: 30px 20px;
+    padding: 30px 15px;
   }
 
   .hero-desc {
