@@ -315,16 +315,23 @@ ul {
   }
 
   .hero-title {
-    font-size: 2.5rem;
-    /* Smaller title */
+    font-size: 2rem;
+    /* Smaller title for mobile */
+    line-height: 1.2;
+    max-width: 100%;
+  }
+
+  .hero-rubric {
+    font-size: 0.75rem;
+    margin-bottom: 10px;
   }
 
   .hero-overlay {
-    padding: 40px 20px;
+    padding: 30px 20px;
   }
 
   .hero-desc {
-    font-size: 1rem;
+    font-size: 0.9rem;
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
