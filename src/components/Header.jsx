@@ -1,13 +1,11 @@
 
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import NewsletterModal from './NewsletterModal';
 import logoImg from '../assets/nomada-logo.png';
 import { categories } from '../data/categories';
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [isNewsletterOpen, setIsNewsletterOpen] = useState(false);
 
     return (
         <header className="header">
@@ -80,17 +78,6 @@ const Header = () => {
                         />
                         <span className="search-icon" aria-hidden="true">🔍</span>
                     </div>
-                    <button
-                        className="btn-subscribe"
-                        onClick={() => setIsNewsletterOpen(true)}
-                    >
-                        Boletín
-                    </button>
-                    {/* Newsletter Modal */}
-                    <NewsletterModal
-                        isOpen={isNewsletterOpen}
-                        onClose={() => setIsNewsletterOpen(false)}
-                    />
                 </div>
             </div>
         </header>
