@@ -315,11 +315,14 @@ ul {
   }
 
   .hero-title {
-    font-size: clamp(1.5rem, 8vw, 2.2rem);
-    /* Fluid size: scales with screen width */
+    font-size: clamp(2rem, 10vw, 2.5rem);
+    /* Fluid, slightly smaller start point */
     line-height: 1.1;
     width: 100%;
-    word-wrap: break-word;
+    word-wrap: normal;
+    /* Don't break words mid-word */
+    overflow-wrap: normal;
+    hyphens: manual;
   }
 
   .hero-rubric {
