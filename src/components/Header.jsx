@@ -19,13 +19,18 @@ const Header = () => {
                         className="menu-container"
                         onMouseEnter={() => setIsMenuOpen(true)}
                         onMouseLeave={() => setIsMenuOpen(false)}
-                        onFocus={() => setIsMenuOpen(true)} // Accessibility: support keyboard focus
+                        onFocus={() => setIsMenuOpen(true)}
                         onBlur={() => setIsMenuOpen(false)}
                     >
                         <button
                             className="menu-toggle"
                             aria-label="Menú principal"
                             aria-expanded={isMenuOpen}
+                            onClick={(e) => {
+                                // Toggle on click, stop propagation to avoid immediate close by other handlers if any
+                                setIsMenuOpen(!isMenuOpen);
+                                e.currentTarget.focus();
+                            }}
                         >
                             <span className="hamburger-line"></span>
                             <span className="hamburger-line"></span>
