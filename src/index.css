@@ -315,10 +315,13 @@ ul {
   }
 
   .hero-title {
-    font-size: 2rem;
-    /* Smaller title for mobile */
+    font-size: 1.6rem;
+    /* Smaller title for mobile to fit screen */
     line-height: 1.2;
     max-width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
   }
 
   .hero-rubric {
