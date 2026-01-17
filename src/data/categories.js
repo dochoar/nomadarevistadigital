@@ -2,9 +2,9 @@
 export const categories = [
     {
         id: 'romance',
-        name: "Bodas y turismo de romance",
+        name: "Distrito Lujo",
         imageId: 28,
-        path: "/category/Bodas y turismo de romance"
+        path: "/category/Distrito Lujo"
     },
     {
         id: 'wellness',
@@ -14,9 +14,9 @@ export const categories = [
     },
     {
         id: 'treasures',
-        name: "Tesoros",
+        name: "Coordenada Secreta",
         imageId: 15,
-        path: "/category/Tesoros"
+        path: "/category/Coordenada Secreta"
     },
     {
         id: 'idiomatic',
@@ -26,33 +26,33 @@ export const categories = [
     },
     {
         id: 'experiences',
-        name: "Experiencias turísticas",
+        name: "TechTravel",
         imageId: 1,
-        path: "/category/Experiencias turísticas"
+        path: "/category/TechTravel"
     },
     {
         id: 'lgbt',
-        name: "Turismo LGBTTTIQ+",
+        name: "Plan Familiar",
         imageId: 16,
-        path: "/category/Turismo LGBTTTIQ+"
+        path: "/category/Plan Familiar"
     },
     {
         id: 'gastronomy',
-        name: "Turismo gastronómico",
+        name: "Ruta Foodie",
         imageId: 4,
         path: "/gastronomy"
     },
     {
         id: 'museums',
-        name: "Vive Museos",
+        name: "Guía Práctica",
         imageId: 22,
-        path: "/category/Vive Museos"
+        path: "/category/Guía Práctica"
     },
     {
         id: 'meetings',
-        name: "Turismo de reuniones y eventos",
+        name: "Melatte / Social",
         imageId: 27,
-        path: "/category/Turismo de reuniones y eventos"
+        path: "/category/Melatte Social"
     },
     {
         id: 'aquatic',
@@ -74,9 +74,9 @@ export const categories = [
     },
     {
         id: 'nature',
-        name: "Agroturismo y naturaleza",
+        name: "Raíces",
         imageId: 24,
-        path: "/category/Agroturismo y naturaleza"
+        path: "/category/Raíces"
     },
     {
         id: 'destinations',

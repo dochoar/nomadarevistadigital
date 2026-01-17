@@ -98,18 +98,28 @@
 
 @media (max-width: 768px) {
     .video-carousel-section {
-        padding: 2rem 1rem;
+        padding: 1.5rem 0;
+        /* Full bleed on mobile */
     }
 
     .video-carousel-header h2 {
         font-size: 1.5rem;
         line-height: 1.3;
-        padding: 0 10px;
+        padding: 0 16px;
+        /* Align with container text */
+    }
+
+    .video-carousel-container {
+        padding: 1rem 16px;
+        /* Add start/end padding for cards */
+        gap: 1rem;
+        /* Tighter gap */
     }
 
     .video-card-embed {
-        width: 280px;
-        height: 500px;
+        width: 270px;
+        /* Slightly narrower for better peek */
+        height: 480px;
     }
 
     .carousel-arrow {
